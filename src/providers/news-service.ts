@@ -2,8 +2,6 @@
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
-let apiUrl = 'http://keysfin.com/Handlers/RSS.ashx?feed=rss-keysfin';
-
 /*
   Generated class for the StarWarsService provider.
 
@@ -13,6 +11,8 @@ let apiUrl = 'http://keysfin.com/Handlers/RSS.ashx?feed=rss-keysfin';
 @Injectable()
 export class NewsService {
 
+    rssToJsonServiceBaseUrl = 'https://api.rss2json.com/v1/api.json?rss_url=';
+    apiUrl = 'http://keysfin.com/Handlers/RSS.ashx?feed=rss-keysfin';
     data: any[]
 
     constructor(public http: Http) {}
@@ -29,16 +29,16 @@ export class NewsService {
             // We're using Angular HTTP provider to request the data,
             // then on the response, it'll map the JSON data to a parsed JS object.
             // Next, we process the data and resolve the promise with the new data.
-            this.http.get(apiUrl)
+            this.http.get(this.rssToJsonServiceBaseUrl + this.apiUrl)
                 .map(res => {
-                    console.log("=============== IT WORKED: " + res);
+                    //console.log("=============== IT WORKED 2: " + JSON.stringify(res.json(), null, " "));
                     return res.json()
                 })
-                .subscribe(data => {
-                    console.log(data);
+                .subscribe(res => {
+                    console.log(res);
                     // we've got back the raw data, now generate the core schedule data
                     // and save the data for later reference
-                    this.data = data.results;
+                    this.data = res.items;
                     resolve(this.data);
                 });
         });

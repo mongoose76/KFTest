@@ -10,17 +10,12 @@
 <ion-content padding>
   <h3>KeysFin News Wire</h3>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-
   <ion-list>
-    <button ion-item *ngFor="let item of starships" (click)="showAlert($event, item)">
+    <button ion-item *ngFor="let item of news" (click)="showAlert($event, item)">
       <ion-avatar item-left>
-        <img src="{{item.picture.thumbnail}}">
+        <img src="{{item.enclosure.link}}">
       </ion-avatar>
       {{item.title}}
-      <div class="item-note" item-right>
-        {{item.description}}
-      </div>
     </button>
   </ion-list>
 

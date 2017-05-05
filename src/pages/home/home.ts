@@ -19,6 +19,7 @@ export class HomePage {
         this.newsService.load()
             .then(data => {
                 this.news = data;
+                console.log("=============== this.news = " + JSON.stringify(this.news, null, " "));
             });
     }
 
