@@ -3,7 +3,7 @@ import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 /*
-  Generated class for the StarWarsService provider.
+  Generated class for the NewsService provider.
 
   See https://angular.io/docs/ts/latest/guide/dependency-injection.html
   for more info on providers and Angular 2 DI.
@@ -35,7 +35,7 @@ export class NewsService {
                     return res.json()
                 })
                 .subscribe(res => {
-                    console.log(res);
+                    //console.log(res);
                     // we've got back the raw data, now generate the core schedule data
                     // and save the data for later reference
                     this.data = res.items;

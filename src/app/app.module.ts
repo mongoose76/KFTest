@@ -6,6 +6,12 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { TabsPage } from '../pages/tabs/tabs';
+import { ContactPage } from '../pages/contact/contact';
+import { CompaniesPage } from '../pages/companies/companies';
+import { PeoplePage } from '../pages/people/people';
+import { AboutPage } from '../pages/about/about';
+
 import { StarWarsService } from '../providers/star-wars-service';
 import { NewsService } from '../providers/news-service';
 
@@ -15,8 +21,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
     declarations: [
         MyApp,
+        TabsPage,
         HomePage,
-        ListPage
+        AboutPage,
+        ListPage,
+        ContactPage,
+        CompaniesPage,
+        PeoplePage
     ],
     imports: [
         BrowserModule,
@@ -26,8 +37,13 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
+        TabsPage,
         HomePage,
-        ListPage
+        AboutPage,
+        ListPage,
+        ContactPage,
+        CompaniesPage,
+        PeoplePage
     ],
     providers: [
         StatusBar,

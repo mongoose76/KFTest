@@ -19,7 +19,7 @@ export class HomePage {
         this.newsService.load()
             .then(data => {
                 this.news = data;
-                console.log("=============== this.news = " + JSON.stringify(this.news, null, " "));
+                //console.log("=============== this.news = " + JSON.stringify(this.news, null, " "));
             });
     }
 
@@ -27,7 +27,7 @@ export class HomePage {
 
         let alert = this.alertCtrl.create({
             title: item.title,
-            subTitle: item.note,
+            subTitle: item.description,
             buttons: ['Dismiss']
         });
         alert.present();

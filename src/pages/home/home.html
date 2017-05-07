@@ -1,14 +1,13 @@
 ﻿<ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      <img src="assets/img/about_flat.png" />
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>KeysFin News Wire</h3>
+  <h3>News Wire</h3>
 
   <ion-list>
     <button ion-item *ngFor="let item of news" (click)="showAlert($event, item)">
