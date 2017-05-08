@@ -12,14 +12,17 @@ export class HomePage {
     public news: any;
 
     constructor(public newsService: NewsService, public navCtrl: NavController, public alertCtrl: AlertController) {
+    }
+
+    ionViewDidEnter() {
         this.loadNews();
     }
 
     loadNews() {
         this.newsService.load()
-            .then(data => {
+            .then(data => {                
                 this.news = data;
-                //console.log("=============== this.news = " + JSON.stringify(this.news, null, " "));
+                console.log("=============== NewsWire: " + this.news.length + " news items found");
             });
     }
 

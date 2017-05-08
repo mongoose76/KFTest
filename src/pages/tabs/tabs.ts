@@ -10,7 +10,7 @@ import { CompaniesPage } from '../companies/companies';
 })
 export class TabsPage {
 
-    tabs: any[] = [HomePage, CompaniesPage, PeoplePage, ContactPage];
+    tabs: any[] = [CompaniesPage, HomePage, PeoplePage, ContactPage];
 
     constructor() {}
 }

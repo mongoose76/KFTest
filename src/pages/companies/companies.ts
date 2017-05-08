@@ -1,28 +1,31 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { CompaniesService } from '../../providers/companies-service';
+import { CompaniesService, CompanyJSON } from '../../providers/companies-service';
 
 @Component({
     selector: 'page-list',
     templateUrl: 'companies.html',
     providers: [CompaniesService]
 })
+
+
 export class CompaniesPage {
 
-    public news: any;
+    public company_data: CompanyJSON;
+    public keyword: string;
 
     constructor(public companiesService: CompaniesService, public navCtrl: NavController, public navParams: NavParams) {
+        this.company_data = {};
+    }
 
-        this.companiesService.load()
+    searchCompanies(keyword: string) {
+
+        console.log("searching companies using keyword => " + this.keyword);
+
+        this.companiesService.search(this.keyword)
             .then(data => {
-                this.news = [];
-                for (let i = 1; i < 11; i++) {
-                    this.news.push({
-                        title: 'Item ' + i,
-                        note: 'This is item #' + i
-                    });
-                }
+                console.log("companies service response => " + data[0].Name);
+                this.company_data = data[0];
             });
-        
     }
 }

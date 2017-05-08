@@ -1,0 +1,1 @@
+adb install .\platforms\android\build\outputs\apk\android-release-unsigned.apk

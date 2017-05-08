@@ -2,6 +2,18 @@
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
+export interface CompanyJSON {
+    ID?: string
+    Name?: string
+    COD?: string
+    RegNo?: string
+    FiscalCode?: string
+    State?: string
+    County?: string
+    Town?: string
+    IdCAEN?: string
+}
+
 /*
   Generated class for the CompaniesService provider.
 
@@ -11,26 +23,16 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class CompaniesService {
 
-    serviceUrl = '/service.asmx';
+    serviceUrl = 'http://rrws.rocomp.ro/service.asmx';
     targetNamespace = 'http://tempuri.org';
-
-    responseJso: {} = null;
 
     constructor(public http: Http) {}
 
-    load() {
+    search(keyword: string): Promise<CompanyJSON[]> {
 
         return new Promise(resolve => {
 
-            //var request: string = this.toXml(parameters);
-            var request: string = `<tem:GetCompanyAdvanced>
-                        <tem:fiscalCode></tem:fiscalCode>
-                        <tem:name>KeysFin</tem:name>
-                        <tem:status>0</tem:status>
-                        <tem:searchMode>1</tem:searchMode>
-                    </tem:GetCompanyAdvanced>`;
-
-            var envelopedRequest: string = this.getEnvelope(request);
+            var envelopedRequest: string = this.getEnvelope(keyword);
             var method: string = 'GetCompanyAdvanced';
             var xmlHttp: XMLHttpRequest = new XMLHttpRequest();
 
@@ -42,13 +44,35 @@ export class CompaniesService {
 
                     console.log('XMLHttpRequest status: ' + xmlHttp.status);
                     console.log('XMLHttpRequest status text: ' + xmlHttp.statusText);
-                    console.log('XMLHttpRequest response headers: ' + xmlHttp.getAllResponseHeaders());
+                    console.log('XMLHttpRequest response type: ' + xmlHttp.responseType);
+                    //console.log('XMLHttpRequest response headers: ' + xmlHttp.getAllResponseHeaders());
+                    //console.log('XMLHttpRequest response: ' + xmlHttp.response);
+
+                    let soap_result: NodeListOf<Element> = xmlHttp.responseXML.getElementsByTagName('Table');
+                    //let table: Element = soap_result.getElementByTagName
+                    //console.log('XMLHttpRequest responseXML: ' + soap_result);
+
+                    console.log('XMLHttpRequest child 0: ' + soap_result[0]);
+
+                    /*
+                    for (let i = 0; i < soap_result.length; i++) {
+                        let child = soap_result.item[i];
+                        console.log('XMLHttpRequest child: ' + child);
+                    }
+                    */
 
                     //var responseNodeList: NodeListOf<Element> = xmlHttp.responseXML;
 
-                    console.log(xmlHttp.responseText);
+                    let res = [];
+                    let companyDataJSON: CompanyJSON = this.xml2json(soap_result[0]);
 
-                    resolve({})
+                    console.log("===== companyDataJSON " + JSON.stringify(companyDataJSON, null, '  '));
+
+                    res.push(companyDataJSON);
+
+                    console.log("===== companyDataJSON " + JSON.stringify(res, null, '  '));
+
+                    resolve(res)
                 }
             }
 
@@ -62,7 +86,24 @@ export class CompaniesService {
         });
     }
 
-    private getEnvelope(request: string): string {
+    /**
+     * Converts company data from XML to JSON
+     * @param xmlData
+     */
+    private xml2json(xmlData: Element): CompanyJSON {
+
+        let res = {};
+
+        for (let i = 0; i < xmlData.children.length; i++) {            
+            let childName = xmlData.childNodes[i].nodeName;
+            let childValueString = xmlData.childNodes[i].textContent;
+            res[childName] = childValueString;
+        }
+
+        return res;
+    }
+
+    private getEnvelope(keyword: string): string {
         let req = 
             `<x:Envelope xmlns:x="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
                 <x:Header>
@@ -74,7 +115,7 @@ export class CompaniesService {
                 <x:Body>
                     <tem:GetCompanyAdvanced>
                         <tem:fiscalCode></tem:fiscalCode>
-                        <tem:name>KeysFin</tem:name>
+                        <tem:name>${keyword}</tem:name>
                         <tem:status>0</tem:status>
                         <tem:searchMode>1</tem:searchMode>
                     </tem:GetCompanyAdvanced>
