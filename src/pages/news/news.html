@@ -1,0 +1,21 @@
+﻿<ion-header>
+
+  <ion-navbar>
+    <ion-title>KeysFin News</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <h3>News Wire</h3>
+
+  <ion-list>
+    <button ion-item *ngFor="let item of news" (click)="showAlert($event, item)">
+      <ion-avatar item-left>
+        <img src="{{item.enclosure.link}}">
+      </ion-avatar>
+      {{item.title}}
+    </button>
+  </ion-list>
+</ion-content>
