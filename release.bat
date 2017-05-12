@@ -1,3 +1,3 @@
-call ionic build android --prod --release
+﻿call build.bat
 call sign.bat
 call intall2device.bat
