@@ -1,0 +1,55 @@
+﻿<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Companies</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  
+  <ion-item>
+    <ion-label color="primary">Company Name</ion-label>
+    <ion-input [(ngModel)]="keyword" placeholder="Text Input"></ion-input>
+  </ion-item>
+
+  <ion-list>
+
+    <ion-row>
+      <ion-col width-20>ID</ion-col><ion-col width-80>{{company_data.ID}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-20>Name</ion-col><ion-col width-80>{{company_data.Name}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-20>COD</ion-col><ion-col width-80>{{company_data.COD}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-20>RegNo</ion-col><ion-col width-80>{{company_data.RegNo}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-20>FiscalCode</ion-col><ion-col width-80>{{company_data.FiscalCode}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-20>State</ion-col><ion-col width-80>{{company_data.State}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-20>County</ion-col><ion-col width-80>{{company_data.County}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-20>Town</ion-col><ion-col width-80>{{company_data.Town}}</ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col width-20>IdCAEN</ion-col><ion-col width-80>{{company_data.IdCAEN}}</ion-col>
+    </ion-row>
+
+  </ion-list>
+</ion-content>

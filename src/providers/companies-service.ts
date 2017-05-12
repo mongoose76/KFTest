@@ -64,14 +64,13 @@ export class CompaniesService {
                     //var responseNodeList: NodeListOf<Element> = xmlHttp.responseXML;
 
                     let res = [];
-                    let companyDataJSON: CompanyJSON = this.xml2json(soap_result[0]);
 
-                    console.log("===== companyDataJSON " + JSON.stringify(companyDataJSON, null, '  '));
-
-                    res.push(companyDataJSON);
-
-                    console.log("===== companyDataJSON " + JSON.stringify(res, null, '  '));
-
+                    for (let i = 0; i < soap_result.length; i++) {
+                        let companyDataJSON: CompanyJSON = this.xml2json(soap_result[i]);
+                        console.log("===== companyDataJSON " + JSON.stringify(companyDataJSON, null, '  '));
+                        res.push(companyDataJSON);
+                    }
+                    
                     resolve(res)
                 }
             }

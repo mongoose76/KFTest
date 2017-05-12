@@ -11,11 +11,11 @@ import { CompaniesService, CompanyJSON } from '../../providers/companies-service
 
 export class CompaniesPage {
 
-    public companies: CompanyJSON[];
+    public company_data: CompanyJSON;
     public keyword: string;
 
     constructor(public companiesService: CompaniesService, public navCtrl: NavController, public navParams: NavParams) {
-        this.companies = [];
+        this.company_data = {};
     }
 
     searchCompanies(keyword: string) {
@@ -24,7 +24,8 @@ export class CompaniesPage {
 
         this.companiesService.search(this.keyword)
             .then(data => {
-                this.companies = data;
+                console.log("companies service response => " + data[0].Name);
+                this.company_data = data[0];
             });
     }
 }
