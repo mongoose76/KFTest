@@ -13,7 +13,7 @@ import { NewsService } from '../../providers/news-service';
     selector: 'page-news',
     templateUrl: 'news.html',
 })
-export class News {
+export class NewsPage {
 
     public news: any;
 

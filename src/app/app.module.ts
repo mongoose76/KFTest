@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ContactPage } from '../pages/contact/contact';
 import { CompaniesPage } from '../pages/companies/companies';
+import { NewsPage } from '../pages/news/news';
 import { PeoplePage } from '../pages/people/people';
 import { AboutPage } from '../pages/about/about';
 
@@ -25,6 +26,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         ListPage,
         ContactPage,
         CompaniesPage,
+        NewsPage,
         PeoplePage
     ],
     imports: [
@@ -40,6 +42,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         ListPage,
         ContactPage,
         CompaniesPage,
+        NewsPage,
         PeoplePage
     ],
     providers: [

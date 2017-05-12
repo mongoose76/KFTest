@@ -1,4 +1,5 @@
 ﻿page-home {
+
   .item-text-center {
     display: -webkit-box;
     display: -webkit-flex;
@@ -15,8 +16,44 @@
     top: 0;
     height: 100%;
   }
-}
 
-.no-padding {
-  padding: 0px !important;
+  .grid-full ion-row {
+    height: 100%;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .grid-full ion-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: center;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    padding: 10px 5px;
+  }
+
+  .cell-1 {
+    background: url('/assets/img/main_menu/search.png') no-repeat;
+  }
+
+  .cell-2 {
+    background: url('/assets/img/main_menu/news.png') no-repeat;
+  }
+
+  .cell-3 {
+    background: url('/assets/img/main_menu/monitoring.png') no-repeat;
+  }
+
+  .cell-4 {
+    background: url('/assets/img/main_menu/about.png') no-repeat;
+  }
+
+  .cell-5 {
+    background: url('/assets/img/main_menu/about.png') no-repeat;
+  }
+
+  .cell-6 {
+    background: url('/assets/img/main_menu/login.png') no-repeat;
+  }
 }
