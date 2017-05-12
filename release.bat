@@ -1,3 +1,3 @@
 ﻿call build.bat
 call sign.bat
-call intall2device.bat
+call install2device.bat
