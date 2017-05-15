@@ -4,7 +4,7 @@ import { CompaniesService, CompanyJSON } from '../../providers/companies-service
 
 @Component({
     selector: 'page-list',
-    templateUrl: 'companies.html',
+    templateUrl: 'company.html',
     providers: [CompaniesService]
 })
 
