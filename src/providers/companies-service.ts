@@ -1,6 +1,7 @@
 ﻿import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Platform } from 'ionic-angular';
 
 export interface CompanyJSON {
     ID?: string
@@ -23,10 +24,14 @@ export interface CompanyJSON {
 @Injectable()
 export class CompaniesService {
 
-    serviceUrl = '/service/service.asmx';
+    serviceUrl = 'http://rrws.rocomp.ro/service.asmx';
     targetNamespace = 'http://tempuri.org';
 
-    constructor(public http: Http) {}
+    constructor(platform: Platform, public http: Http) {
+        if (platform.is('core') == true) {
+            this.serviceUrl = '/service/service.asmx';
+        }
+    }
 
     search(keyword: string): Promise<CompanyJSON[]> {
 
@@ -46,7 +51,7 @@ export class CompaniesService {
                     console.log('XMLHttpRequest status text: ' + xmlHttp.statusText);
                     console.log('XMLHttpRequest response type: ' + xmlHttp.responseType);
                     //console.log('XMLHttpRequest response headers: ' + xmlHttp.getAllResponseHeaders());
-                    //console.log('XMLHttpRequest response: ' + xmlHttp.response);
+                    console.log('XMLHttpRequest response: ' + xmlHttp.response);
 
                     let soap_result: NodeListOf<Element> = xmlHttp.responseXML.getElementsByTagName('Table');
                     //let table: Element = soap_result.getElementByTagName
