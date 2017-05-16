@@ -1,3 +1,59 @@
-page-list {
+﻿page-company {
 
+  .company_info {
+    background-color: rgb(242, 242, 242)
+  }
+
+  .company_financials {
+    background-color: rgb(222, 236, 168)
+  }
+
+  .company_chart {
+    background-color: rgb(172, 224, 238)
+  }
+
+  .company_report {
+    background-color: rgb(186, 225, 206)
+  }
+
+  .company_scoring {
+    background-color: rgb(255, 232, 191)
+  }
+
+  .company_map {
+    background-color: rgb(228, 240, 194)
+  }
+
+  .item-text-center {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    height: 100%;
+  }
+
+  .grid-full ion-row {
+    height: 100%;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .grid-full ion-col {
+    flex: 0 0 50%;
+    max-width: 50%;
+    text-align: center;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+    padding: 10px 5px;
+  }
 }

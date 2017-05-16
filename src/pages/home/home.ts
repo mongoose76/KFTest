@@ -9,7 +9,7 @@ import { CompaniesPage } from '../companies/companies'
 })
 export class HomePage {
 
-    pages = { 'search': CompaniesPage, 'news': NewsPage, 'monitoring': NewsPage, 'press_monitoring': NewsPage, 'about': NewsPage, 'login': NewsPage }
+    private pages = { 'search': CompaniesPage, 'news': NewsPage, 'monitoring': NewsPage, 'press_monitoring': NewsPage, 'about': NewsPage, 'login': NewsPage }
 
     constructor(public alertCtrl: AlertController, public navCtrl: NavController) {
     }

@@ -16,7 +16,7 @@
   </button>
 
   <ion-list>
-    <button ion-item *ngFor="let company of companies" (click)="itemTapped($event, item)">
+    <button ion-item *ngFor="let company of companies" (click)="itemTapped($event, company)">
       {{company.Name}}
     </button>
   </ion-list>

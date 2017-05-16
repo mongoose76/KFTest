@@ -23,7 +23,7 @@ export interface CompanyJSON {
 @Injectable()
 export class CompaniesService {
 
-    serviceUrl = 'http://rrws.rocomp.ro/service.asmx';
+    serviceUrl = '/service/service.asmx';
     targetNamespace = 'http://tempuri.org';
 
     constructor(public http: Http) {}
