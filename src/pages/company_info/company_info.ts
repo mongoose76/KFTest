@@ -8,7 +8,7 @@ import { CompanyJSON } from '../../providers/companies-service';
 })
 
 
-export class CompanyPage {
+export class CompanyInfoPage {
 
     public company: CompanyJSON;
 
