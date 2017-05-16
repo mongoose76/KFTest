@@ -3,16 +3,15 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Companies</ion-title>
+    <ion-title>Search</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content>
   <ion-item>
-    <ion-label color="primary">Company Name</ion-label>
-    <ion-input [(ngModel)]="keyword" placeholder="Text Input"></ion-input>
+    <ion-input [(ngModel)]="keyword" placeholder="Company Name or CUI"></ion-input>
   </ion-item>
   <button ion-button (click)="searchCompanies($event)">
-    Click me!
+    Search
   </button>
 
   <ion-list>

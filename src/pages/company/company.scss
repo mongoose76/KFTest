@@ -1,5 +1,11 @@
 ﻿page-company {
 
+  .vertical-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .company_info {
     background-color: rgb(242, 242, 242)
   }

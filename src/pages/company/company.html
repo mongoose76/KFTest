@@ -1,29 +1,49 @@
-﻿<ion-content class="grid-full">
+﻿<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{company.Name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="grid-full">
 
   <ion-row>
-    <ion-col class="company_info" (click)="navigate2Page($event, 'info')">
-      General Info<br />
-      <img src="assets/img/company/company_info.png" />
+    <ion-col class="company_info vertical-align" (click)="navigate2Page($event, 'info')">
+      <div>
+        General Info<br />
+        <img src="assets/img/company/company_info.png" />
+      </div>
     </ion-col>
-    <ion-col class="company_financials" (click)="navigate2Page($event, 'financials')">
-      Financials<br />
-      <img src="assets/img/company/company_financial.png" />
+    <ion-col class="company_financials vertical-align" (click)="navigate2Page($event, 'financials')">
+      <div>
+        Financials<br />
+        <img src="assets/img/company/company_financial.png" />
+      </div>
     </ion-col>
-    <ion-col class="company_chart" (click)="navigate2Page($event, 'charts')">
-      Charts<br />
-      <img src="assets/img/company/company_graphs.png" />
+    <ion-col class="company_chart vertical-align" (click)="navigate2Page($event, 'charts')">
+      <div>
+        Charts<br />
+        <img src="assets/img/company/company_graphs.png" />
+      </div>
     </ion-col>
-    <ion-col class="company_report" (click)="navigate2Page($event, 'reports')">
-      Reports<br />
-      <img src="assets/img/company/company_report.png" />
+    <ion-col class="company_report vertical-align" (click)="navigate2Page($event, 'reports')">
+      <div>
+        Reports<br />
+        <img src="assets/img/company/company_report.png" />
+      </div>
     </ion-col>
-    <ion-col class="company_scoring" (click)="navigate2Page($event, 'scoring')">
-      Scoring<br />
-      <img src="assets/img/company/company_scoring.png" />
+    <ion-col class="company_scoring vertical-align" (click)="navigate2Page($event, 'scoring')">
+      <div>
+        Scoring<br />
+        <img src="assets/img/company/company_scoring.png" />
+      </div>
     </ion-col>
-    <ion-col class="company_map" (click)="navigate2Page($event, 'map')">
-      Map<br />
-      <img src="assets/img/company/company_map.png" />
+    <ion-col class="company_map vertical-align" (click)="navigate2Page($event, 'map')">
+      <div>
+        Map<br />
+        <img src="assets/img/company/company_map.png" />
+      </div>
     </ion-col>
   </ion-row>
 
