@@ -1,8 +1,8 @@
 ﻿<ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
+      <ion-icon name="menu"></ion-icon>      
+    </button>   
     <ion-title>Search</ion-title>
   </ion-navbar>
 </ion-header>
@@ -10,13 +10,16 @@
   <ion-item>
     <ion-input [(ngModel)]="keyword" placeholder="Company Name or CUI"></ion-input>
   </ion-item>
-  <button ion-button (click)="searchCompanies($event)">
+  <button ion-button (click)="searchCompanies($event)" *ngIf="showSpinner == 0">
     Search
   </button>
 
-  <ion-list>
+  <ion-spinner *ngIf="showSpinner == 1"></ion-spinner>
+
+  <ion-list *ngIf="showSpinner == 0">
     <button ion-item *ngFor="let company of companies" (click)="itemTapped($event, company)">
       {{company.Name}}
     </button>
   </ion-list>
+
 </ion-content>

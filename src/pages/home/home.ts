@@ -1,7 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, AlertController } from 'ionic-angular';
 import { NewsPage } from '../news/news';
-import { CompaniesPage } from '../companies/companies'
+import { CompanySearchPage } from '../company_search/company_search'
 
 @Component({
     selector: 'page-home',
@@ -9,7 +9,7 @@ import { CompaniesPage } from '../companies/companies'
 })
 export class HomePage {
 
-    private pages = { 'search': CompaniesPage, 'news': NewsPage, 'monitoring': NewsPage, 'press_monitoring': NewsPage, 'about': NewsPage, 'login': NewsPage }
+    private pages = { 'search': CompanySearchPage, 'news': NewsPage, 'monitoring': NewsPage, 'press_monitoring': NewsPage, 'about': NewsPage, 'login': NewsPage }
 
     constructor(public alertCtrl: AlertController, public navCtrl: NavController) {
     }

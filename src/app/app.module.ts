@@ -7,7 +7,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { ContactPage } from '../pages/contact/contact';
-import { CompaniesPage } from '../pages/companies/companies';
+import { CompanySearchPage } from '../pages/company_search/company_search';
 import { CompanyPage } from '../pages/company/company';
 import { CompanyInfoPage } from '../pages/company_info/company_info';
 import { NewsPage } from '../pages/news/news';
@@ -27,7 +27,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         AboutPage,
         ListPage,
         ContactPage,
-        CompaniesPage,
+        CompanySearchPage,
         CompanyPage,
         CompanyInfoPage,
         NewsPage,
@@ -45,7 +45,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         AboutPage,
         ListPage,
         ContactPage,
-        CompaniesPage,
+        CompanySearchPage,
         CompanyPage,
         CompanyInfoPage,
         NewsPage,
