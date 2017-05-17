@@ -24,13 +24,35 @@ export interface CompanyJSON {
 @Injectable()
 export class CompaniesService {
 
-    serviceUrl = 'http://rrws.rocomp.ro/service.asmx';
-    targetNamespace = 'http://tempuri.org';
+    serviceUrl: string = 'http://rrws.rocomp.ro/service.asmx';
+    targetNamespace: string = 'http://tempuri.org';
+    username: string = "hdsoftware";
+    password: string = "hdsoftware#1";
 
     constructor(platform: Platform, public http: Http) {
+
+        // use proxy when running on desktop
         if (platform.is('core') == true) {
             this.serviceUrl = '/service/service.asmx';
         }
+
+        // read soap service credentials
+        var credentials: any = http.get('assets/data/credentials.json').map((res) => res.json()).subscribe(data => {
+            this.setCredentials(data);
+        });
+    }
+
+    /**
+     * Set credentails (4DEV)
+
+     * @param credentials
+     */
+    setCredentials(credentials:any) {
+
+        console.log('Credentials = ' + JSON.stringify(credentials, null, '  '));
+
+        this.username = credentials['username'];
+        this.password = credentials['password'];
     }
 
     search(keyword: string): Promise<CompanyJSON[]> {
@@ -112,8 +134,8 @@ export class CompaniesService {
             `<x:Envelope xmlns:x="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
                 <x:Header>
                     <tem:Credentials>
-                        <tem:Username>hdsoftware</tem:Username>
-                        <tem:Password>hdsoftware#1</tem:Password>
+                        <tem:Username>${this.username}</tem:Username>
+                        <tem:Password>${this.password}</tem:Password>
                     </tem:Credentials>
                 </x:Header>
                 <x:Body>

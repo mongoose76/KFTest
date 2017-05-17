@@ -1,12 +1,11 @@
 {
   "name": "KFTest",
   "app_id": "3173219e",
-  "v2": true,
-  "typescript": true,
   "proxies": [
     {
       "path": "/service",
       "proxyUrl": "http://rrws.rocomp.ro/"
     }
-  ]
+  ],
+  "type": "ionic-angular"
 }
