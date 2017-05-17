@@ -1,21 +1,18 @@
 ﻿<ion-header>
-
   <ion-navbar>
     <ion-title>KeysFin News</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-  <h3>News Wire</h3>
+  
+    <ion-row ion-item *ngFor="let item of news" (click)="itemTapped($event, item)">
 
-  <ion-list>
-    <button ion-item *ngFor="let item of news" (click)="showAlert($event, item)">
-      <ion-avatar item-left>
-        <img src="{{item.enclosure.link}}">
-      </ion-avatar>
-      {{item.title}}
-    </button>
-  </ion-list>
+        <ion-img width="80" height="80" src="{{item.enclosure.link}}"></ion-img>
+
+        <ion-item text-wrap class="title">{{item.title | slice:0:100 }}</ion-item>
+        <ion-item text-wrap class="description">{{item.description  | slice:0:200 }}</ion-item>
+
+    </ion-row>
+
 </ion-content>

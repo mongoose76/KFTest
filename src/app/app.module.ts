@@ -11,6 +11,7 @@ import { CompanySearchPage } from '../pages/company_search/company_search';
 import { CompanyPage } from '../pages/company/company';
 import { CompanyInfoPage } from '../pages/company_info/company_info';
 import { NewsPage } from '../pages/news/news';
+import { NewsDetailsPage } from '../pages/news_details/news_details';
 import { PeoplePage } from '../pages/people/people';
 import { AboutPage } from '../pages/about/about';
 
@@ -31,6 +32,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         CompanyPage,
         CompanyInfoPage,
         NewsPage,
+        NewsDetailsPage,
         PeoplePage
     ],
     imports: [
@@ -49,6 +51,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         CompanyPage,
         CompanyInfoPage,
         NewsPage,
+        NewsDetailsPage,
         PeoplePage
     ],
     providers: [

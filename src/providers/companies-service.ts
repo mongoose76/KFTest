@@ -37,7 +37,7 @@ export class CompaniesService {
         }
 
         // read soap service credentials
-        var credentials: any = http.get('assets/data/credentials.json').map((res) => res.json()).subscribe(data => {
+        http.get('assets/data/credentials.json').map((res) => res.json()).subscribe(data => {
             this.setCredentials(data);
         });
     }

@@ -1,6 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { NewsService } from '../../providers/news-service';
+import { NewsDetailsPage } from '../news_details/news_details'
 
 /**
  * Generated class for the News page.
@@ -20,7 +21,7 @@ export class NewsPage {
     }
 
     ionViewDidLoad() {
-        console.log('ionViewDidLoad News');
+        console.log('NewsPage: ionViewDidLoad()');
         this.loadNews();
     }
 
@@ -32,14 +33,11 @@ export class NewsPage {
             });
     }
 
-    showAlert(event, item) {
-
-        let alert = this.alertCtrl.create({
-            title: item.title,
-            subTitle: item.description.substr(200),
-            buttons: ['Dismiss']
+    itemTapped(event, item) {
+        // Navigating to news details page
+        this.navCtrl.push(NewsDetailsPage, {
+            news: item
         });
-        alert.present();
-
     }
+
 }
