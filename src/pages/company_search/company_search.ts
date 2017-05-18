@@ -16,32 +16,36 @@ export class CompanySearchPage {
     public companies: CompanyJSON[];
     public keyword: string;    
     public results: any;
+    private loader: Loading;
 
     constructor(public companiesService: CompaniesService, public navCtrl: NavController, public navParams: NavParams, public loadingCtrl: LoadingController) {
         this.companies = [];
         this.keyword = "Iron Sheep";
     }
 
-    showLoader(): Loading {
+    showLoader() {
 
-        let loader: Loading = this.loadingCtrl.create({
+        this.loader = this.loadingCtrl.create({
             content: "Shaving legs..."
         });
-        loader.present();
-        return loader;
+        this.loader.present();
+    }
+
+    hideLoader() {
+        this.loader.dismiss();
     }
 
     searchCompanies(keyword: string) {
 
         console.log("searching companies using keyword => " + this.keyword);
 
-        let loader: Loading = this.showLoader();
+        this.showLoader();
 
         this.companiesService.search(this.keyword)
             .then(data => {
                 this.companies = data;
 
-                loader.dismiss();
+                this.hideLoader();
             });
     }
 
