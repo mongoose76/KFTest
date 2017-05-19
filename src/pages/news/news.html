@@ -4,15 +4,22 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  
-    <ion-row ion-item *ngFor="let item of news" (click)="itemTapped($event, item)">
+<ion-content>
+  <ion-grid class="grid-full">
 
-        <ion-img width="80" height="80" src="{{item.enclosure.link}}"></ion-img>
+    <ion-row *ngFor="let item of news" (click)="itemTapped($event, item)">
+      
+      <ion-col col-2 class="vertical-align">
+        <img width="80" src="{{item.enclosure.link}}" />
+      </ion-col>
 
-        <ion-item text-wrap class="title">{{item.title | slice:0:100 }}</ion-item>
-        <ion-item text-wrap class="description">{{item.description  | slice:0:200 }}</ion-item>
+      <ion-col col-7>
+        <p text-wrap class="title">{{item.title}}</p>
+        <p text-wrap>{{item.description  | slice:0:200 }}</p>
+      </ion-col>
 
     </ion-row>
+
+  </ion-grid>
 
 </ion-content>

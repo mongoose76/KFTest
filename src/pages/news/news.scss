@@ -5,12 +5,13 @@
     flex-direction: column;
   }
 
-  .title {
-    font-weight: bold;
+  .vertical-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .description {
-    text-wrap: normal;
-    flex-wrap: wrap;
+  .title {
+    font-weight: bold;
   }
 }
