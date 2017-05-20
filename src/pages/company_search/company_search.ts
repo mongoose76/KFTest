@@ -24,9 +24,10 @@ export class CompanySearchPage {
     }
 
     showLoader() {
+        let msgs: string[] = ["Shaving legs...", "Chillin' with a beer", "Planning to take over the world", "Actually fetching the data"];
 
         this.loader = this.loadingCtrl.create({
-            content: "Shaving legs..."
+            content: msgs[Math.floor(Math.random() * msgs.length)]
         });
         this.loader.present();
     }
