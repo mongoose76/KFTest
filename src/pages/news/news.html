@@ -5,15 +5,16 @@
 </ion-header>
 
 <ion-content>
-  <ion-grid class="grid-full">
+  
+  <ion-grid class="grid-full" [virtualScroll]="news">
 
-    <ion-row *ngFor="let item of news" (click)="itemTapped($event, item)">
+    <ion-row *virtualItem="let item" (click)="itemTapped($event, item)">
       
       <ion-col col-2 class="vertical-align">
-        <img width="80" src="{{item.enclosure.link}}" />
+        <img style="width: 80px;" src="{{item.enclosure.link}}"/>
       </ion-col>
 
-      <ion-col col-7>
+      <ion-col col-10>
         <p text-wrap class="title">{{item.title}}</p>
         <p text-wrap>{{item.description  | slice:0:200 }}</p>
       </ion-col>
