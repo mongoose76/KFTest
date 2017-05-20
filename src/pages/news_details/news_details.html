@@ -16,7 +16,13 @@
   </ion-row>
   <ion-row>
     <ion-col col-12 class="description">
-      {{news.description}}
+      <span [innerHTML]="news.description"></span>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col col-12>
+      Full story here: <a href="{{news.link}}">{{news.link}}</a>
     </ion-col>
   </ion-row>
 

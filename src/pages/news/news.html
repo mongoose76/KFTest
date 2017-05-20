@@ -16,7 +16,7 @@
 
       <ion-col col-10>
         <p text-wrap class="title">{{item.title}}</p>
-        <p text-wrap>{{item.description  | slice:0:200 }}</p>
+        <p text-wrap [innerHTML]="item.description | slice:0:200"></p>
       </ion-col>
 
     </ion-row>
