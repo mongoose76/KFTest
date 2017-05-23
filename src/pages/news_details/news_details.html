@@ -6,24 +6,23 @@
 
 <ion-content>
 
-  <ion-row>
-    <ion-col col-2>
-      <img style="width: 80px;" src="{{news.enclosure.link}}"/>
-    </ion-col>
-    <ion-col col-10 class="title">
-      {{news.title}}
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col col-12 class="description">
-      <span [innerHTML]="news.description"></span>
-    </ion-col>
-  </ion-row>
-
-  <ion-row>
-    <ion-col col-12>
-      Full story here: <a href="{{news.link}}">{{news.link}}</a>
-    </ion-col>
-  </ion-row>
+  <ion-grid>
+    <ion-row>      
+      <ion-col class="title">
+        {{news.title}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="description">
+        <img style="width: 50%" src="{{news.enclosure.link}}" />
+        <span [innerHTML]="news.description"></span>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        Full story here: <a href="{{news.link}}">{{news.link}}</a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

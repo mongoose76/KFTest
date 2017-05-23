@@ -6,21 +6,21 @@
 
 <ion-content>
   
-  <ion-grid class="grid-full" [virtualScroll]="news">
+    <ion-grid *ngFor="let item of news">
 
-    <ion-row *virtualItem="let item" (click)="itemTapped($event, item)">
-      
-      <ion-col col-2 class="vertical-align">
-        <img style="width: 80px;" src="{{item.enclosure.link}}"/>
-      </ion-col>
+      <ion-row (click)="itemTapped($event, item)" style="border-bottom: 1px solid;">
 
-      <ion-col col-10>
-        <p text-wrap class="title">{{item.title}}</p>
-        <p text-wrap [innerHTML]="item.description | slice:0:200"></p>
-      </ion-col>
+        <ion-col col-4 class="vertical-align">
+          <img class="full-image" src="{{item.enclosure.link}}" />
+        </ion-col>
 
-    </ion-row>
+        <ion-col col-8>
+              <p class="title">{{item.title}}</p>
+              <p [innerHTML]="item.description | slice:0:200"></p>
+        </ion-col>
 
-  </ion-grid>
+      </ion-row>
+
+    </ion-grid>
 
 </ion-content>
