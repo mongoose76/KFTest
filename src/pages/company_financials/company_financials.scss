@@ -1,33 +1,3 @@
 ﻿page-company-financials {
 
-  .grid-full {
-    display: flex;
-    flex-direction: column;
-  }
-
-  ion-grid {
-    height: 100%;
-  }
-
-  ion-row {
-    flex: 1;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .row-odd {
-    background-color: #F2F2F2;
-  }
-
-  .row-even {
-    background-color: #E9E9E9;
-  }
-
-  .footer {
-    border-top: 1px solid;
-  }
-
-  .footer ion-col {
-    text-align: center;
-  }
 }
