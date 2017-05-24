@@ -1,33 +1,33 @@
 ﻿page-company-info {
 
-  .grid-full {
-    display: flex;
-    flex-direction: column;
+  .icon {
+    width: 48px;
+    height: 48px;
+    padding: 2px 2px 2px;
+    opacity: 0.9;
   }
 
-  ion-grid {
-    height: 100%;
+  .ion-ios-gen-info, .ion-md-gen-info {
+    content: url('../assets/img/company/company_info.png');
   }
 
-  ion-row {
-    flex: 1;
-    align-items: center;
-    justify-content: center;
+  .ion-ios-financials, .ion-md-financials {
+    content: url('../assets/img/company/company_financial.png');
   }
 
-  .row-odd {
-    background-color: #F2F2F2;
+  .ion-ios-charts, .ion-md-charts {
+    content: url('../assets/img/company/company_graphs.png');
   }
 
-  .row-even {
-    background-color: #E9E9E9;
+  .ion-ios-reports, .ion-md-reports {
+    content: url('../assets/img/company/company_report.png');
   }
 
-  .footer {
-    border-top: 1px solid;
+  .ion-ios-scoring, .ion-md-scoring {
+    content: url('../assets/img/company/company_scoring.png');
   }
 
-  .footer ion-col {
-    text-align: center;
+  .ion-ios-lemap, .ion-md-lemap {
+    content: url('../assets/img/company/company_map.png');
   }
 }
