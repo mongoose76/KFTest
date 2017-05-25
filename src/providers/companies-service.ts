@@ -26,8 +26,8 @@ export class CompaniesService {
 
     serviceUrl: string = 'http://rrws.rocomp.ro/service.asmx';
     targetNamespace: string = 'http://tempuri.org';
-    username: string = "hdsoftware";
-    password: string = "hdsoftware#1";
+    username: string;
+    password: string;
 
     constructor(platform: Platform, public http: Http) {
 
