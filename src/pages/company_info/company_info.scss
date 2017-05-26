@@ -7,30 +7,9 @@
     opacity: 0.9;
   }
 
-  .ion-ios-gen-info, .ion-md-gen-info {
-    content: url('../assets/img/company/company_info.png');
+  ion-segment-button {
+    heigth: 90%;
   }
-
-  .ion-ios-financials, .ion-md-financials {
-    content: url('../assets/img/company/company_financial.png');
-  }
-
-  .ion-ios-charts, .ion-md-charts {
-    content: url('../assets/img/company/company_graphs.png');
-  }
-
-  .ion-ios-reports, .ion-md-reports {
-    content: url('../assets/img/company/company_report.png');
-  }
-
-  .ion-ios-scoring, .ion-md-scoring {
-    content: url('../assets/img/company/company_scoring.png');
-  }
-
-  .ion-ios-lemap, .ion-md-lemap {
-    content: url('../assets/img/company/company_map.png');
-  }
-
   // general info
   .full-height, .full-height ion-grid, .full-height ion-item {
     display: flex;
