@@ -11,16 +11,15 @@ import { CompanyInfoPage } from '../company_info/company_info';
 export class CompanyPage {
 
     public company: CompanyJSON;
-    private tabs: {} = { 'info': 0, 'financials': 1, 'charts': 2, 'reports': 3, 'scoring': 4, 'map': 5 };
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
         // If we navigated to this page, we will have an item available as a nav param
         this.company = navParams.get('company');
     }
 
-    navigate2Page(event, tab) {
+    navigate2Page(event, section) {
         this.navCtrl.push(CompanyInfoPage, {
-            tabIndex: this.tabs[tab],
+            section: section,
             company: this.company
         });
     }

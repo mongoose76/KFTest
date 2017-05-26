@@ -1,5 +1,5 @@
 ﻿page-company-info {
-
+  // section icons
   .icon {
     width: 48px;
     height: 48px;
@@ -29,5 +29,41 @@
 
   .ion-ios-lemap, .ion-md-lemap {
     content: url('../assets/img/company/company_map.png');
+  }
+
+  // general info
+  .flex-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .full-height {
+    height: 100%;
+  }
+
+  ion-row {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .row-odd {
+    background-color: #F2F2F2;
+  }
+
+  .row-even {
+    background-color: #E9E9E9;
+  }
+
+  .footer {
+    border-top: 1px solid;
+  }
+
+  .footer ion-col {
+    text-align: center;
+  }
+  // charts section
+  .chartissimo {
+    height: 100%;
   }
 }

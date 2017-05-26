@@ -10,9 +10,6 @@ import { ContactPage } from '../pages/contact/contact';
 import { CompanySearchPage } from '../pages/company_search/company_search';
 import { CompanyPage } from '../pages/company/company';
 import { CompanyInfoPage } from '../pages/company_info/company_info';
-import { CompanyGenInfoPage } from '../pages/company_gen_info/company_gen_info';
-import { CompanyFinancialsPage } from '../pages/company_financials/company_financials';
-import { CompanyChartsPage } from '../pages/company_charts/company_charts';
 import { NewsPage } from '../pages/news/news';
 import { NewsDetailsPage } from '../pages/news_details/news_details';
 import { PeoplePage } from '../pages/people/people';
@@ -33,9 +30,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         CompanySearchPage,
         CompanyPage,
         CompanyInfoPage,
-        CompanyGenInfoPage,
-        CompanyFinancialsPage,
-        CompanyChartsPage,
         NewsPage,
         NewsDetailsPage,
         PeoplePage
@@ -55,9 +49,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         CompanySearchPage,
         CompanyPage,
         CompanyInfoPage,
-        CompanyGenInfoPage,
-        CompanyFinancialsPage,
-        CompanyChartsPage,
         NewsPage,
         NewsDetailsPage,
         PeoplePage
