@@ -1,17 +1,10 @@
 ﻿page-company-info {
-  // section icons
-  .icon {
-    width: 48px;
-    height: 48px;
-    padding: 2px 2px 2px;
-    opacity: 0.9;
-  }
 
   ion-segment-button {
     heigth: 90%;
   }
-  // general info
-  .full-height, .full-height ion-grid, .full-height ion-item {
+  
+  .full-height div, .full-height ion-grid, .full-height ion-item {
     display: flex;
     flex-direction: column;
     height: 100%;

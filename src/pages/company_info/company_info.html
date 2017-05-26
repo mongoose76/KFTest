@@ -1,14 +1,12 @@
 ﻿<ion-header>
-
   <ion-navbar>
     <ion-title>{{company.Name}}</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-<ion-content>
+<ion-content class="full-height">
 
-  <div class="full-height" [ngSwitch]="section">
+  <div [ngSwitch]="section">
 
     <ion-grid *ngSwitchCase="'gen-info'">
 
