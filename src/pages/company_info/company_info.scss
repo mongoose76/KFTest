@@ -32,12 +32,9 @@
   }
 
   // general info
-  .flex-grid {
+  .full-height, .full-height ion-grid, .full-height ion-item {
     display: flex;
     flex-direction: column;
-  }
-
-  .full-height {
     height: 100%;
   }
 
