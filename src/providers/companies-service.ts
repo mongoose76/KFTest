@@ -37,6 +37,9 @@ export class CompaniesService {
         }
 
         // read soap service credentials
+
+        console.log('===== Reading credentials ... ');
+
         http.get('assets/data/credentials.json').map((res) => res.json()).subscribe(data => {
             this.setCredentials(data);
         });
@@ -49,7 +52,7 @@ export class CompaniesService {
      */
     setCredentials(credentials:any) {
 
-        console.log('Credentials = ' + JSON.stringify(credentials, null, '  '));
+        console.log('===== Credentials = ' + JSON.stringify(credentials, null, '  '));
 
         this.username = credentials['username'];
         this.password = credentials['password'];
