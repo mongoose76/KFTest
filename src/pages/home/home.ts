@@ -12,6 +12,11 @@ export class HomePage {
     private pages = { 'search': CompanySearchPage, 'news': NewsPage, 'monitoring': NewsPage, 'press_monitoring': NewsPage, 'about': NewsPage, 'login': NewsPage }
 
     constructor(public alertCtrl: AlertController, public navCtrl: NavController) {
+        if (window.indexedDB) {
+           console.log("I'm in WKWebView!");
+        } else {
+           console.log("I'm in UIWebView");
+        }
     }
 
     ionViewDidEnter() {       
