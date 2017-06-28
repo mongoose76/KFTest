@@ -1,4 +1,6 @@
 ﻿<ion-content class="grid-full">
+  
+  <div [innerHTML]="myDebug" style="z-index: 1; position: absolute; padding: 10px; left: 100px; top: 20px; color: white; background: rgba(0, 0, 0, 0.15)"></div>
 
   <ion-row>
     <ion-col class="cell-1 vertical-align" (click)="navigate2Page($event, 'search')">

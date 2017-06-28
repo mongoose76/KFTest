@@ -1,4 +1,5 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, ViewChild } from '@angular/core';
+import { Platform } from 'ionic-angular';
 import { NavController, AlertController } from 'ionic-angular';
 import { NewsPage } from '../news/news';
 import { CompanySearchPage } from '../company_search/company_search'
@@ -7,20 +8,24 @@ import { CompanySearchPage } from '../company_search/company_search'
     selector: 'page-home',
     templateUrl: 'home.html'
 })
+
 export class HomePage {
 
     private pages = { 'search': CompanySearchPage, 'news': NewsPage, 'monitoring': NewsPage, 'press_monitoring': NewsPage, 'about': NewsPage, 'login': NewsPage }
+    public myDebug: string;
 
-    constructor(public alertCtrl: AlertController, public navCtrl: NavController) {
+    constructor(public alertCtrl: AlertController, public navCtrl: NavController, platform: Platform) {
+
+        this.myDebug = "Engine: ";
+
         if (window.indexedDB) {
-           console.log("I'm in WKWebView!");
+            this.myDebug += "WKWebView";
         } else {
-           console.log("I'm in UIWebView");
+            this.myDebug += "UIWebView";
         }
-    }
 
-    ionViewDidEnter() {       
-    }   
+        this.myDebug += "<br>URL: " + platform.url();
+    }
 
     navigate2Page(event, page) {
         this.navCtrl.push(this.pages[page]);
