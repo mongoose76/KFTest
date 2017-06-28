@@ -1,4 +1,4 @@
-﻿import { Component, ViewChild } from '@angular/core';
+﻿import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { NavController, AlertController } from 'ionic-angular';
 import { NewsPage } from '../news/news';
