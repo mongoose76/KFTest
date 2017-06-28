@@ -16,7 +16,9 @@ export class HomePage {
 
     constructor(public alertCtrl: AlertController, public navCtrl: NavController, platform: Platform) {
 
-        this.myDebug = "Engine: ";
+        this.myDebug = "Platform(s): " + platform.platforms().concat();
+
+        this.myDebug += "<br>Engine: ";
 
         if (window.indexedDB) {
             this.myDebug += "WKWebView";
