@@ -32,9 +32,12 @@ export class CompaniesService {
     constructor(platform: Platform, public http: Http) {
 
         // use proxy when running on desktop
+        // not needed anymore since Access-Control-Allow-Origin * header was added to server
+        /*
         if (platform.is('core') == true) {
             this.serviceUrl = '/service/service.asmx';
         }
+        */
 
         // read soap service credentials
 
@@ -108,7 +111,7 @@ export class CompaniesService {
             // send SOAP request
             xmlHttp.open("POST", this.serviceUrl, true);
 
-            xmlHttp.setRequestHeader("SOAPAction", this.targetNamespace + '/' + encodeURIComponent(method));
+            //xmlHttp.setRequestHeader("SOAPAction", this.targetNamespace + '/' + encodeURIComponent(method));
             xmlHttp.setRequestHeader("Content-Type", "text/xml; charset=utf-8");
 
             xmlHttp.send(envelopedRequest);
