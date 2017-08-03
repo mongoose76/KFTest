@@ -3,13 +3,17 @@
   ion-segment-button {
     heigth: 90%;
   }
-  
+
   .full-height div, .full-height ion-grid, .full-height ion-item {
     display: flex;
     flex-direction: column;
     height: 100%;
   }
 
+  .full-width ion-grid {
+     width: 100%;
+  }
+    
   ion-row {
     flex: 1;
     align-items: center;

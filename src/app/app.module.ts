@@ -16,6 +16,7 @@ import { PeoplePage } from '../pages/people/people';
 import { AboutPage } from '../pages/about/about';
 
 import { NewsService } from '../providers/news-service';
+import { WidgetService } from '../providers/widget-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -57,6 +58,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         StatusBar,
         SplashScreen,
         NewsService,
+        WidgetService,
         { provide: ErrorHandler, useClass: IonicErrorHandler }
     ]
 })
