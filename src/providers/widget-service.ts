@@ -1,16 +1,24 @@
 ﻿import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http } from '@angular/http';
+import { Platform } from 'ionic-angular';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class WidgetService {
 
-    //private base_url = 'http://mongoose76.ddns.net:8081/widgets/';
-    private base_url = 'http://localhost:3000/widgets/';
+    private PUBLIC_URL = 'http://mongoose76.ddns.net:8081/widgets/';
+    private DEV_URL = 'http://localhost:3000/widgets/';
+    private base_url;
 
-    constructor(
-        public http: Http
-    ) { }
+    constructor(public http: Http, platform: Platform) {
+
+        // use dev url when running locally
+        if (platform.is('core') == true) {
+            this.base_url = this.DEV_URL;
+        } else {
+            this.base_url = this.PUBLIC_URL;
+        }
+    }
 
     getMainMenu() {
 
@@ -23,11 +31,11 @@ export class WidgetService {
 
     }
 
-    getCompanyInfo(): Promise<{}> {
+    getCompanyInfoTemplate(template: string): Promise<{}> {
 
         return new Promise(resolve => {
 
-            let url = this.base_url + 'genInfo';
+            let url = this.base_url + template;
             this.http.get(url).subscribe(data => {
                 resolve(data.text());
             });

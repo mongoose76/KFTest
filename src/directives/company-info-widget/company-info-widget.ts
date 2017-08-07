@@ -14,6 +14,7 @@ import { CompanyJSON } from '../../providers/companies-service';
 export class CompanyInfoWidgetDirective {
 
     @Input() protected company_data: CompanyJSON;
+    @Input() protected template: string;
 
     private tpl: string;
 
@@ -25,7 +26,9 @@ export class CompanyInfoWidgetDirective {
      */
     ngOnInit() {
 
-        this.widgets.getCompanyInfo().then(tpl => {
+        console.log("Fetching template " + this.template);
+
+        this.widgets.getCompanyInfoTemplate(this.template).then(tpl => {
 
             this.tpl = <string>tpl;
             this.el.nativeElement.insertAdjacentHTML('beforeend', this.applyData(this.tpl, this.company_data));
@@ -41,7 +44,7 @@ export class CompanyInfoWidgetDirective {
     private applyData(tpl: string, company: CompanyJSON) {
 
         for (var fld in company) {
-            console.log(company[fld]);
+            console.log(fld + "=" + company[fld]);
             tpl = tpl.replace('{{company.' + fld + '}}', company[fld]);
         }
 

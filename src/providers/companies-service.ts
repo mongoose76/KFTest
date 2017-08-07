@@ -1,7 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import { Platform } from 'ionic-angular';
 
 export interface CompanyJSON {
     ID?: string
@@ -29,15 +28,7 @@ export class CompaniesService {
     username: string;
     password: string;
 
-    constructor(platform: Platform, public http: Http) {
-
-        // use proxy when running on desktop
-        // not needed anymore since Access-Control-Allow-Origin * header was added to server
-        /*
-        if (platform.is('core') == true) {
-            this.serviceUrl = '/service/service.asmx';
-        }
-        */
+    constructor(public http: Http) {
 
         // read soap service credentials
 

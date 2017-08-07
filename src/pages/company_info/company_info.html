@@ -8,11 +8,10 @@
 
   <div [ngSwitch]="section">
 
-    <ion-item *ngSwitchCase="'gen-info'" company-info-widget [company_data]="company">
+    <ion-item *ngSwitchCase="'gen-info'" company-info-widget [template]="'genInfo'" [company_data]="company">
     </ion-item>
 
-    <ion-item *ngSwitchCase="'financials'">
-      FIN - Dear sir, we ask you kindly to upgrade your account to be able to access this data. In other words: pay up bitch ! :)
+    <ion-item *ngSwitchCase="'financials'" company-info-widget [template]="'financials'" [company_data]="company">
     </ion-item>
 
     <ion-item *ngSwitchCase="'charts'">
