@@ -8,8 +8,7 @@
 
   <div [ngSwitch]="section">
 
-    <ion-item *ngSwitchCase="'gen-info'">
-      <div company-info-widget></div>
+    <ion-item *ngSwitchCase="'gen-info'" company-info-widget [company_data]="company">
     </ion-item>
 
     <ion-item *ngSwitchCase="'financials'">
