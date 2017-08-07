@@ -20,6 +20,7 @@ import { WidgetService } from '../providers/widget-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { CompanyInfoWidgetDirective } from '../directives/company-info-widget/company-info-widget';
 
 @NgModule({
     declarations: [
@@ -33,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
         CompanyInfoPage,
         NewsPage,
         NewsDetailsPage,
-        PeoplePage
+        PeoplePage,
+    CompanyInfoWidgetDirective
     ],
     imports: [
         BrowserModule,

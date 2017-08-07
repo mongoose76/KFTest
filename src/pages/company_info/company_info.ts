@@ -1,7 +1,7 @@
 ﻿import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { CompanyJSON } from '../../providers/companies-service';
-import { WidgetService } from '../../providers/widget-service';
+
 
 @Component({
     selector: 'page-company-info',
@@ -12,19 +12,10 @@ export class CompanyInfoPage {
     public section: string;
     public company: CompanyJSON;    
 
-    constructor(public navCtrl: NavController, public navParams: NavParams, public widgets: WidgetService) {
+    constructor(public navCtrl: NavController, public navParams: NavParams) {
         // If we navigated to this page, we will have an item available as a nav param
         this.company = navParams.get('company');
         this.section = navParams.get('section');
-
-
-        this.widgets.getCompanyInfo().then(data => {
-            console.log(data);
-            //this.addDynamicElement(data);
-
-            var el = document.querySelector("div[name='genInfoContent']");
-            el.insertAdjacentHTML('beforeend', <string> data);
-        });
     }
 
 }
