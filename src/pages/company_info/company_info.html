@@ -8,27 +8,27 @@
 
   <div [ngSwitch]="section">
 
-    <ion-item *ngSwitchCase="'gen-info'" company-info-widget [template]="'genInfo'" [company_data]="company">
-    </ion-item>
+    <div *ngSwitchCase="'gen-info'" company-info-widget [template]="'genInfo'" [company_data]="company">
+    </div>
 
-    <ion-item *ngSwitchCase="'financials'" company-info-widget [template]="'financials'" [company_data]="company">
-    </ion-item>
+    <div *ngSwitchCase="'financials'" company-info-widget [template]="'financials'" [company_data]="company">
+    </div>
 
-    <ion-item *ngSwitchCase="'charts'">
+    <div *ngSwitchCase="'charts'">
       <img class="chartissimo" src="assets/img/company/le_company_chart.png" />
-    </ion-item>
+    </div>
 
-    <ion-item *ngSwitchCase="'reports'">
+    <div *ngSwitchCase="'reports'">
       REP - Dear sir, we ask you kindly to upgrade your account to be able to access this data. In other words: pay up bitch ! :)
-    </ion-item>
+    </div>
 
-    <ion-item *ngSwitchCase="'scoring'">
+    <div *ngSwitchCase="'scoring'">
       SCORING - Dear sir, we ask you kindly to upgrade your account to be able to access this data. In other words: pay up bitch ! :)
-    </ion-item>
+    </div>
 
-    <ion-item *ngSwitchCase="'lemap'">
+    <div *ngSwitchCase="'lemap'">
       LEMAP - Dear sir, we ask you kindly to upgrade your account to be able to access this data. In other words: pay up bitch ! :)
-    </ion-item>
+    </div>
 
   </div>  
 
