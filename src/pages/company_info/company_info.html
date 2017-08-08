@@ -14,8 +14,7 @@
     <div *ngSwitchCase="'financials'" company-info-widget [template]="'financials'" [company_data]="company">
     </div>
 
-    <div *ngSwitchCase="'charts'">
-      <img class="chartissimo" src="assets/img/company/le_company_chart.png" />
+    <div *ngSwitchCase="'charts'" company-info-widget [template]="'charts'" [company_data]="company">      
     </div>
 
     <div *ngSwitchCase="'reports'">
