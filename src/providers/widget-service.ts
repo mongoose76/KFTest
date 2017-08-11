@@ -13,7 +13,7 @@ export class WidgetService {
     constructor(public http: Http, platform: Platform) {
 
         // use dev url when running locally
-        if (platform.is('core') == true) {
+        if (platform.is('core') || platform.is('mobileweb')) {
             this.base_url = this.DEV_URL;
         } else {
             this.base_url = this.PUBLIC_URL;
