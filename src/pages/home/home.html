@@ -1,6 +1,10 @@
 ﻿<ion-content class="grid-full">
-  
-  <div [innerHTML]="myDebug" style="z-index: 1; position: absolute; padding: 10px; left: 100px; top: 20px; color: white; background: rgba(0, 0, 0, 0.15)"></div>
+
+  <button ion-button icon-start secondary medium (click)="toggleDebugWindow($event)" style="z-index: 2; right: 10px; position: absolute; color: white; background: rgba(0, 0, 0, 0.15)">
+    <ion-icon name="help-circle"></ion-icon>
+  </button>
+
+  <div [hidden]="!showDebug" [innerHTML]="myDebug" style="z-index: 1; position: absolute; padding: 10px; left: 100px; top: 20px; color: white; background: rgba(0, 0, 0, 0.15)"></div>
 
   <ion-row>
     <ion-col class="cell-1 vertical-align" (click)="navigate2Page($event, 'search')">

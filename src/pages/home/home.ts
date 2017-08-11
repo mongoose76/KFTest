@@ -14,6 +14,8 @@ export class HomePage {
 
     private pages = { 'search': CompanySearchPage, 'news': NewsPage, 'monitoring': NewsPage, 'press_monitoring': NewsPage, 'about': NewsPage, 'login': UserManagementPage }
     public myDebug: string;
+    public showDebug: boolean = false;
+    public debugButtonCaption: string = "Show Debug";
 
     constructor(public alertCtrl: AlertController, public navCtrl: NavController, platform: Platform) {
 
@@ -43,6 +45,11 @@ export class HomePage {
         });
         alert.present();
 
+    }
+
+    public toggleDebugWindow(event) {        
+        this.showDebug = !this.showDebug;
+        this.debugButtonCaption = this.showDebug ? "Hide Debug" : "Show Debug";
     }
 
 }
