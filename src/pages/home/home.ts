@@ -3,6 +3,7 @@ import { Platform } from 'ionic-angular';
 import { NavController, AlertController } from 'ionic-angular';
 import { NewsPage } from '../news/news';
 import { CompanySearchPage } from '../company_search/company_search'
+import { UserManagementPage } from '../user-management/user-management'
 
 @Component({
     selector: 'page-home',
@@ -11,7 +12,7 @@ import { CompanySearchPage } from '../company_search/company_search'
 
 export class HomePage {
 
-    private pages = { 'search': CompanySearchPage, 'news': NewsPage, 'monitoring': NewsPage, 'press_monitoring': NewsPage, 'about': NewsPage, 'login': NewsPage }
+    private pages = { 'search': CompanySearchPage, 'news': NewsPage, 'monitoring': NewsPage, 'press_monitoring': NewsPage, 'about': NewsPage, 'login': UserManagementPage }
     public myDebug: string;
 
     constructor(public alertCtrl: AlertController, public navCtrl: NavController, platform: Platform) {

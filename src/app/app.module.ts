@@ -14,7 +14,9 @@ import { NewsPage } from '../pages/news/news';
 import { NewsDetailsPage } from '../pages/news_details/news_details';
 import { PeoplePage } from '../pages/people/people';
 import { AboutPage } from '../pages/about/about';
+import { UserManagementPage } from '../pages/user-management/user-management'
 
+import { AuthService } from '../providers/auth-service';
 import { NewsService } from '../providers/news-service';
 import { WidgetService } from '../providers/widget-service';
 
@@ -27,6 +29,7 @@ import { CompanyInfoWidgetDirective } from '../directives/company-info-widget/co
         MyApp,
         HomePage,
         AboutPage,
+        UserManagementPage,
         ListPage,
         ContactPage,
         CompanySearchPage,
@@ -48,6 +51,7 @@ import { CompanyInfoWidgetDirective } from '../directives/company-info-widget/co
         HomePage,
         AboutPage,
         ListPage,
+        UserManagementPage,
         ContactPage,
         CompanySearchPage,
         CompanyPage,
@@ -61,6 +65,7 @@ import { CompanyInfoWidgetDirective } from '../directives/company-info-widget/co
         SplashScreen,
         NewsService,
         WidgetService,
+        AuthService,
         { provide: ErrorHandler, useClass: IonicErrorHandler }
     ]
 })

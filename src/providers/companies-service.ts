@@ -1,5 +1,6 @@
 ﻿import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { AuthService } from './auth-service';
 import 'rxjs/add/operator/map';
 
 export interface CompanyJSON {
@@ -25,31 +26,8 @@ export class CompaniesService {
 
     serviceUrl: string = 'http://rrws.rocomp.ro/service.asmx';
     targetNamespace: string = 'http://tempuri.org';
-    username: string;
-    password: string;
 
-    constructor(public http: Http) {
-
-        // read soap service credentials
-
-        console.log('===== Reading credentials ... ');
-
-        http.get('assets/data/credentials.json').map((res) => res.json()).subscribe(data => {
-            this.setCredentials(data);
-        });
-    }
-
-    /**
-     * Set credentails (4DEV)
-
-     * @param credentials
-     */
-    setCredentials(credentials:any) {
-
-        console.log('===== Credentials = ' + JSON.stringify(credentials, null, '  '));
-
-        this.username = credentials['username'];
-        this.password = credentials['password'];
+    constructor(public http: Http, public auth: AuthService) {
     }
 
     search(keyword: string): Promise<CompanyJSON[]> {
@@ -131,8 +109,8 @@ export class CompaniesService {
             `<x:Envelope xmlns:x="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
                 <x:Header>
                     <tem:Credentials>
-                        <tem:Username>${this.username}</tem:Username>
-                        <tem:Password>${this.password}</tem:Password>
+                        <tem:Username>${this.auth.username}</tem:Username>
+                        <tem:Password>${this.auth.password}</tem:Password>
                     </tem:Credentials>
                 </x:Header>
                 <x:Body>

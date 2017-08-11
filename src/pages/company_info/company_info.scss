@@ -1,5 +1,13 @@
 ﻿page-company-info {
 
+  .toolbar-background {
+    background: -webkit-linear-gradient(top, RGB(73,115,60), RGB(88,142,72));
+  }
+
+  .toolbar-title {
+    color: white;
+  }
+
   ion-segment-button {
     heigth: 90%;
   }
